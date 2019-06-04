@@ -1,12 +1,3 @@
-/* header {
-	margin: 0px 10px 5px 10px;
-} */
-
-/* .navbar-expand-sm {
-	max-width: 1100px;
-	margin: 0px auto 0px auto;
-} */
-
 html {
     background: #36454f;
     background-repeat: no-repeat;
@@ -19,52 +10,88 @@ body {
 	margin: 0 auto 1em auto;
     max-width: 55em;
     padding: 1em 4em;
-    box-shadow: 5px 5px 5px black;
     font-size: 16px;
     background: white;
 }
 
-/* .page-header {
-	text-transform: uppercase;
-	color: #31b0d5;
-	font-weight: bold;
-} */
-/* 
-ul.navbar-nav a:hover {
-	/* background: rgb(19, 88, 157) !important;
-	color: white !important;
-	max-width: 1000px;
-	margin: 0px auto 0px auto;
-} */
-
-/* nav {
-	background: #0a2e52 !important;
+.content {
+	padding-top: 60px;
 }
 
-ul.nav a {
-	color: white !important;
-} */
+.image {
+	transition: 1s;
+	width: 100%;
+}
 
-/* .content {
-	background: white;
+.image:hover {
+	filter: saturate(900%);
+	transition: 1s;
+}
+
+.image:active {
+	padding: 100px;
+	transition: 0.2s;
+}
+
+#logo {
+	opacity: 1;
+	transition: 0.2s;
+}
+
+#logo:hover {
+	opacity: 0.5;
+	transition: 0.2s;
+}
+
+#logo:active {
 	padding: 5px;
-	margin: 0px auto 0px auto;
-	max-width: 1000px;
-	min-height: 700px;
-	font-size: 20px;
-} */
-
-/* footer {
-	background-color: rgb(37, 56, 82);
-	background: #0a2e52;
-	min-height: 100px;
-	margin: 0px auto 0px auto;
-	border: 1px solid #e6e6e6;
-	padding: 10px;
-	color: lightgrey;
+	transition: 0.2s;
 }
 
-.footer {
-	max-width: 1100px;
-	margin: 0px auto 10px auto;
-} */
+.nav-border {
+    margin: auto;
+}
+
+.navspace {
+	clear: both;
+}
+
+ul.nav {
+    position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    opacity: 0.9;
+}
+
+li.nav {
+    float: left;
+    padding: 10px;
+}
+
+li.nav-list {
+	float: right;
+}
+
+li.nav-list a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 17px 20px 17px;
+    text-decoration: none;
+	transition: 0.2s;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.nav-list a:hover {
+	background-color: #111;
+	padding-left: 50px;
+	padding-right: 50px;
+	transition: 0.2s;
+	text-decoration: bold;
+}
