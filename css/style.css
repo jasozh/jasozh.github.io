@@ -19,28 +19,34 @@ body {
 }
 
 .image {
+	align: center;
 	transition: 1s;
 	width: 100%;
+	border-radius: 10px;
 }
 
 .image:hover {
 	filter: saturate(900%);
 	transition: 1s;
+	border-radius: 50%;
 }
 
 .image:active {
-	padding: 100px;
+	/* padding: 200px; */
 	transition: 0.2s;
+	width: 50px;
 }
 
 #logo {
 	opacity: 1;
 	transition: 0.2s;
+	border-radius: 50%;
 }
 
 #logo:hover {
 	opacity: 0.5;
 	transition: 0.2s;
+	border-radius: 10px;
 }
 
 #logo:active {
@@ -66,7 +72,8 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    opacity: 0.9;
+	opacity: 0.9;
+	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
 }
 
 li.nav {
