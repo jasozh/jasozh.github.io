@@ -1,52 +1,60 @@
 html {
-    background: #36454f;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+	background: #36454f;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 body {
-    font-family: "Verdana", sans-serif;
-    line-height: 1.5;
+	font-family: "Verdana", sans-serif;
+	line-height: 1.5;
 	margin: 0 auto 1em auto;
-    max-width: 55em;
-    padding: 1em 4em;
-    font-size: 16px;
-    background: white;
+	max-width: 55em;
+	padding: 1em 4em;
+	font-size: 16px;
+	background: white;
 }
 
+/* Leave space at the top for the nav bar */
 .content {
 	padding-top: 60px;
 }
 
+/* Image transitions */
 .image {
-	align: center;
-	transition: 1s;
+	transition: 0.2s;
 	width: 100%;
 	border-radius: 10px;
+	cursor: pointer;
+	/* display: block;
+	margin: auto; */
 }
 
 .image:hover {
-	filter: saturate(900%);
-	transition: 1s;
-	border-radius: 50%;
+	filter: saturate(200%);
+	transition: 0.2s;
+	border-radius: 20px;
 }
 
 .image:active {
-	/* padding: 200px; */
+	width: 100%;
 	transition: 0.2s;
-	width: 50px;
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
+/* Main logo transitions */
 #logo {
 	opacity: 1;
 	transition: 0.2s;
 	border-radius: 50%;
+	cursor: pointer;
 }
 
 #logo:hover {
-	opacity: 0.5;
+	opacity: 0.8;
 	transition: 0.2s;
 	border-radius: 10px;
+	transform: rotate(20deg);
 }
 
 #logo:active {
@@ -54,51 +62,58 @@ body {
 	transition: 0.2s;
 }
 
+/* Nav bar */
 .nav-border {
-    margin: auto;
-}
-
-.navspace {
-	clear: both;
+	margin: auto;
 }
 
 ul.nav {
-    position: fixed;
+	position: fixed;
 	top: 0;
 	left: 0;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-	opacity: 0.9;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	backdrop-filter: blur(2px);
+	opacity: 0.95;
 	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
 }
 
-li.nav {
-    float: left;
-    padding: 10px;
+@media screen and (max-width: 600px) {
+	ul.nav li {
+		float: none;
+	}
+
+	.content {
+		padding-top: 300px;
+	}
 }
 
-li.nav-list {
+li.nav-logo {
+	float: left;
+	padding: 10px;
+}
+
+li.nav {
 	float: right;
 }
 
-li.nav-list a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 17px 20px 17px;
-    text-decoration: none;
+li.nav a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 17px 20px 17px;
+	text-decoration: none;
 	transition: 0.2s;
 }
 
 /* Change the link color to #111 (black) on hover */
-li.nav-list a:hover {
+li.nav a:hover {
 	background-color: #111;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 30px;
+	padding-right: 30px;
 	transition: 0.2s;
-	text-decoration: bold;
 }
