@@ -1,84 +1,99 @@
+/* Add CSS animations to all page elements */
+* {
+	transition: 0.2s;
+}
+
 html {
 	background: #36454f;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 }
 
 body {
 	font-family: "Verdana", sans-serif;
-	line-height: 1.5;
-	margin: 0 auto 1em auto;
+	margin: 0 auto 2em auto;
 	max-width: 55em;
 	padding: 1em 4em;
 	font-size: 16px;
-	background: white;
 }
 
 /* Leave space at the top for the nav bar */
-.content {
+#content {
 	padding-top: 60px;
 }
 
-/* Image transitions */
+/* Image styling */
 .image {
-	transition: 0.2s;
-	width: 100%;
-	border-radius: 10px;
+	max-width: 100%;
+	height: 25em;
+	border-radius: 1em;
+	display: block;
+	margin: auto;
 	cursor: pointer;
-	/* display: block;
-	margin: auto; */
 }
 
 .image:hover {
 	filter: saturate(200%);
-	transition: 0.2s;
-	border-radius: 20px;
+	border-radius: 2em;
+	/* border: 10px black; */
 }
 
 .image:active {
-	width: 100%;
-	transition: 0.2s;
-	padding-top: 20%;
-	padding-bottom: 20%;
-	padding-left: 40%;
-	padding-right: 40%;
+	padding: 20%;
 }
 
 /* Paragraph styling */
-
-
-p {
-	transition: 0.2s;
+h1:hover, p:hover {
+	color: gray;
 }
 
-p:hover {
-	color: gray;
-	transition: 0.2s;
-}
-
-p:active {
-	color: gray;
+h1:active, p:active {
 	filter: blur(2px);
+}
+
+/* Footer styling */
+footer {
+	font-size: 0.8em;
+}
+
+/* Responsive design */
+
+/* For phone screens */
+@media screen and (max-width: 40em) {
+	.nav-border {
+		width: 100%;
+	}
+
+	ul.nav li.nav {
+		width: 100%;
+		display: block;
+	}
+}
+
+/* For tablet screens */
+@media screen and (max-width: 55em) {
+	body {
+		margin: 0 auto 0 auto;
+		padding: 1em 2em;
+	}
+
+	.image {
+		height: 45vw;
+	}
 }
 
 /* Main logo transitions */
 #logo {
-	opacity: 1;
-	transition: 0.2s;
 	border-radius: 50%;
 	cursor: pointer;
 }
 
 #logo:hover {
-	opacity: 0.8;
-	transition: 0.2s;
+	opacity: 0.5;
 	border-radius: 10px;
 	transform: rotate(20deg);
 }
 
 #logo:active {
 	padding: 5px;
-	transition: 0.2s;
 }
 
 /* Nav bar */
@@ -91,37 +106,10 @@ ul.nav {
 	top: 0;
 	left: 0;
 	width: 100%;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
 	background-color: #333;
 	backdrop-filter: blur(2px);
 	opacity: 0.95;
 	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
-}
-
-/* Responsive design */
-@media screen and (max-width: 600px) {
-	ul.nav li {
-		float: none;
-	}
-
-	.content {
-		padding-top: 300px;
-	}
-
-	body {
-		margin: 0 auto 0 auto;
-		padding: 1em 1em;
-	}
-}
-
-@media screen and (max-width: 55em) {
-	body {
-		margin: 0 auto 0 auto;
-		padding: 1em 2em;
-	}
 }
 
 li.nav-logo {
@@ -129,28 +117,24 @@ li.nav-logo {
 	padding: 10px;
 }
 
-li.nav {
-	float: right;
+li.nav, li.nav-menu {
+	float: left;
 }
 
-li.nav a {
-	display: block;
+li.nav a, li.nav-menu a {
 	color: white;
-	text-align: center;
 	padding: 17px 20px 17px;
 	text-decoration: none;
-	transition: 0.2s;
+	display: block;
 }
 
 /* Change the link color to #111 (black) on hover */
-li.nav a:hover {
+li.nav a:hover, li.nav-menu a:hover {
 	background-color: #111;
 	padding-left: 30px;
 	padding-right: 30px;
-	transition: 0.2s;
 }
 
-li.nav a:active {
-	transition: 0.2s;
+li.nav a:active, li.nav-menu a:active {
 	background-color: #000;
 }
