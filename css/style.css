@@ -38,8 +38,27 @@ body {
 .image:active {
 	width: 100%;
 	transition: 0.2s;
-	padding-left: 20%;
-	padding-right: 20%;
+	padding-top: 20%;
+	padding-bottom: 20%;
+	padding-left: 40%;
+	padding-right: 40%;
+}
+
+/* Paragraph styling */
+
+
+p {
+	transition: 0.2s;
+}
+
+p:hover {
+	color: gray;
+	transition: 0.2s;
+}
+
+p:active {
+	color: gray;
+	filter: blur(2px);
 }
 
 /* Main logo transitions */
@@ -82,6 +101,7 @@ ul.nav {
 	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
 }
 
+/* Responsive design */
 @media screen and (max-width: 600px) {
 	ul.nav li {
 		float: none;
@@ -89,6 +109,18 @@ ul.nav {
 
 	.content {
 		padding-top: 300px;
+	}
+
+	body {
+		margin: 0 auto 0 auto;
+		padding: 1em 1em;
+	}
+}
+
+@media screen and (max-width: 55em) {
+	body {
+		margin: 0 auto 0 auto;
+		padding: 1em 2em;
 	}
 }
 
@@ -116,4 +148,9 @@ li.nav a:hover {
 	padding-left: 30px;
 	padding-right: 30px;
 	transition: 0.2s;
+}
+
+li.nav a:active {
+	transition: 0.2s;
+	background-color: #000;
 }
