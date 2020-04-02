@@ -86,7 +86,7 @@ footer {
 /* For non-phone screens */
 @media screen and (min-width: 40em) {
 	/* Hiding the nav bar menu */
-	li#nav-menu {
+	li.nav-menu {
 		display: none;
 	}
 
@@ -128,7 +128,7 @@ ul.nav {
 	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
 }
 
-li.nav, li#nav-logo, li#nav-menu {
+li.nav, li#nav-logo, li.nav-menu {
 	float: left;
 }
 
@@ -136,7 +136,7 @@ li#nav-logo {
 	padding: 10px;
 }
 
-li.nav a, li#nav-menu a {
+li.nav a, li.nav-menu a {
 	color: white;
 	padding: 17px 20px 17px;
 	text-decoration: none;
