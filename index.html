@@ -14,15 +14,23 @@
 <script>
 	function show() {
 		var nav = document.getElementsByClassName("nav");
-		var content = document.getElementById("content");
+		var navMenu = document.getElementById("nav-link-menu");
 
 		for (var i = 1; i < nav.length; i++) {
-			if (nav[i].style.display === "none") {
-				nav[i].style.display = "block";
-				// content.style.paddingTop = "300px";
-			} else {
+			if (nav[i].style.display == "block") {
 				nav[i].style.display = "none";
-				// content.style.paddingTop = "60px";
+
+				// Show inactive hamburger menu when navbar is closed
+				navMenu.style.padding = "17px 20px 17px";
+				navMenu.style.backgroundColor = "#111";
+				navMenu.style.backgroundColor = "#333";
+			} else {
+				nav[i].style.display = "block";
+
+				// Show active hamburger menu when navbar is open
+				navMenu.style.paddingLeft = "30px";
+				navMenu.style.paddingRight = "30px";
+				navMenu.style.backgroundColor =  "#000";
 			}
 		}
 	}
@@ -49,8 +57,8 @@
 
 		<ul class="nav">
 			<div class="nav-border">
-				<li class="nav-logo"><img src="img/best-avatar.png" alt="Logo" id="logo" height="40"></li>
-				<li class="nav-menu" style="float: right;"><a href="javascript:void(0);" onclick="show()"
+				<li id="nav-logo"><img src="img/best-avatar.png" alt="Logo" id="logo" height="40"></li>
+				<li id="nav-menu" style="float: right;"><a id="nav-link-menu" href="javascript:void(0);" onclick="show()"
 						class="icon"><i class="fa fa-bars"></i></a></li>
 				<li class="nav"><a href="home-redirect.html">Home</a></li>
 				<li class="nav"><a href="about.html">About</a></li>

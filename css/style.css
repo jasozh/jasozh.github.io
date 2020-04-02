@@ -9,7 +9,7 @@ html {
 
 body {
 	font-family: "Verdana", sans-serif;
-	margin: 0 auto 2em auto;
+	margin: 0 auto 1em auto;
 	max-width: 65em;
 	padding: 1em 4em;
 	font-size: 16px;
@@ -58,25 +58,41 @@ footer {
 
 /* For phone screens */
 @media screen and (max-width: 40em) {
+	/* Hiding nav bar by default, making everything full width */
 	.nav-border {
 		width: 100%;
 	}
 
-	ul.nav li.nav {
+	li.nav {
 		width: 100%;
-		display: block;
+		display: none;
 	}
 }
 
 /* For tablet screens */
 @media screen and (max-width: 65em) {
+	/* Reducing side padding */
 	body {
 		margin: 0 auto 0 auto;
 		padding: 1em 2em;
 	}
 
+	/* Making images responsive to screen width */
 	.image {
 		height: 45vw;
+	}
+}
+
+/* For non-phone screens */
+@media screen and (min-width: 40em) {
+	/* Hiding the nav bar menu */
+	li#nav-menu {
+		display: none;
+	}
+
+	/* Showing the nav bar content */
+	li.nav {
+		display: block !important;
 	}
 }
 
@@ -112,16 +128,15 @@ ul.nav {
 	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
 }
 
-li.nav-logo {
+li.nav, li#nav-logo, li#nav-menu {
 	float: left;
+}
+
+li#nav-logo {
 	padding: 10px;
 }
 
-li.nav, li.nav-menu {
-	float: left;
-}
-
-li.nav a, li.nav-menu a {
+li.nav a, li#nav-menu a {
 	color: white;
 	padding: 17px 20px 17px;
 	text-decoration: none;
@@ -129,12 +144,12 @@ li.nav a, li.nav-menu a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li.nav a:hover, li.nav-menu a:hover {
+li.nav a:hover {
 	background-color: #111;
 	padding-left: 30px;
 	padding-right: 30px;
 }
 
-li.nav a:active, li.nav-menu a:active {
+li.nav a:active {
 	background-color: #000;
 }
