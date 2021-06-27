@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/png" href="img/best-avatar-circle.png">
+    <title>For a special someone</title>
+</head>
+<script>
+    var clickCount = 0
+    var fadeTime = 500
+
+    const newText = [
+        "Hey there Maple",
+        "I know this is kinda weird",
+        "But I wanted to give you something, even if just digitally",
+        "So, uh... here I am",
+        "Happy two-year anniversary, Maple 🍁",
+        "We've been through so much together",
+        "<img class='img-thumbnail' src='img/nashville.jpg'><br />Nashville",
+        "<img class='img-thumbnail' src='img/nashville_fish.jpg'><br />That weird fish in Nashville",
+        "<img class='img-thumbnail' src='img/weird_face.jpg'><br />Your weird faces",
+        "<img class='img-thumbnail' src='img/toilet.jpg'><br />That weird toilet",
+        "<img class='img-thumbnail' src='img/toilet_maple.jpg'><br />You being weird with the weird toilet",
+        "<img class='img-thumbnail' src='img/communism.jpg'><br />Communist propaganda",
+        "And that's only the beginning",
+        "<img class='img-thumbnail' src='img/castlewood.jpg'><br />We went to Castlewood",
+        "<img class='img-thumbnail' src='img/date.jpg'><br />We went on dates",
+        "<img class='img-thumbnail' src='img/bighill.jpg'><br />And dates",
+        "<img class='img-thumbnail' src='img/winter_break.jpg'><br />And we took the time to see each other no matter what",
+        "You've always been so amazing",
+        "Kind",
+        "Reassuring",
+        "Thoughtful",
+        "Funny",
+        "And weird",
+        "I could go on and on",
+        "I think you get the gist though",
+        "Happy anniversary ❤️",
+    ]
+
+    function advanceText() {
+        if (clickCount == 0) {
+            moveText()
+        } else if (clickCount < newText.length) {
+            $('#body').fadeOut(fadeTime)
+            setTimeout(() => {
+                moveText()
+            }, fadeTime)
+        }
+
+        function moveText() {
+            document.getElementById('body').innerHTML = `${newText[clickCount]}`
+            $('#body').fadeIn(fadeTime)
+            // if ((clickCount + 1) < newText.length) {
+            clickCount++
+            // }
+            console.log(clickCount)
+        }
+    }
+
+</script>
+
+<body onClick='advanceText()''>
+    <div class=' centered'>
+    <h1 id='body'>Hey there Maple</h1>
+    </div>
+</body>
