@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" href="img/logo-circle.png">
+  <title>Jason Zheng</title>
+</head>
+
+<script>
+  // Set scroll to 0 onload so colorNavbar() doesn't immediately trigger
+  var scroll = 0
+
+  // Changes navbar classes when navbar collapses
+  function resizeNavbar() {
+    const md = 768
+    const navList = document.getElementsByClassName("nav-link")
+
+    for (const nav of navList) {
+      if (window.innerWidth < md && nav.classList.contains("px-4")) {
+        nav.classList.remove("px-4")
+      } else if (window.innerWidth >= md && !nav.classList.contains("px-4")) {
+        nav.classList.add("px-4")
+      }
+    }
+  }
+
+  // Changes the navbar color depending on current screen position
+  function colorNavbar() {
+    const navbar = document.getElementById("navbar")
+    const home = document.getElementById("top-nav")
+
+    if (scroll == 0) {
+      scroll++
+    } else if (home.classList.contains("active") && navbar.classList.contains("navbar-dark")) {
+      navbar.classList.add("navbar-light", "bg-light", "opacity-75")
+      navbar.classList.remove("navbar-dark", "bg-dark")
+      document.documentElement.style.setProperty("--active-color", "lightgrey");
+    } else if (!home.classList.contains("active") && navbar.classList.contains("navbar-light")) {
+      navbar.classList.remove("navbar-light", "bg-light", "opacity-75")
+      navbar.classList.add("navbar-dark", "bg-dark")
+      document.documentElement.style.setProperty("--active-color", "black");
+    }
+  }
+</script>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100" onload="resizeNavbar()"
+  onresize="resizeNavbar()" onscroll="colorNavbar()">
+  <!-- Header  -->
+  <header>
+    <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light bg-light opacity-75">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand d-md-none" href="#">
+          <img src="img/logo.png" id="logo" alt="" height="25" class="d-inline-block align-text-top">
+          &nbsp;&nbsp;Jason Zheng
+        </a>
+
+        <!-- Responsive toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar content -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a id="top-nav" class="nav-link px-4" href="#home">Home</a>
+            <a class="nav-link px-4" href="#about">About</a>
+            <a class="nav-link px-4" href="#contact">Contact</a>
+            <a class="nav-link px-4" href="#projects">Projects</a>
+            <a class="nav-link px-4" href="#hobbies">Hobbies</a>
+            <a class="nav-link px-4" href="#random">Random</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <article id="home" class="landing">
+      <h4>Home</h4>
+      <br>
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+    <article id="about">
+      <h4>About</h4>
+      <p>...</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+    <article id="contact">
+      <h4>Contact</h4>
+      <p>...</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+    <article id="projects">
+      <h4>Projects</h4>
+      <p>...</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+    <article id="hobbies">
+      <h4>Hobbies</h4>
+      <p>...</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+    <article id="random">
+      <h4>Random</h4>
+      <p>...</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+
+  </footer>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
