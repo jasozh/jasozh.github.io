@@ -1,9 +1,14 @@
-/* Define CSS variables*/
+/*
+*
+*  Global styling
+*
+*/
+
+/* Define CSS variables */
 :root {
     /* Default lightgrey, changes to black when navbar color is inverted */
     --active-color: lightgrey;
 }
-
 
 /* Add CSS animations to all page elements */
 * {
@@ -11,13 +16,13 @@
 }
 
 
-/* Add background image to landing page */
-article.landing {
-    background-image: url('../img/background.png');
-}
+/*
+*
+*  Navbar styling
+*
+*/
 
-
-/* Navbar styling */
+/* Show highlighted active state only on desktop */
 @media screen and (max-width: 767px) {
     a.active {
         text-decoration: underline;
@@ -36,30 +41,81 @@ article.landing {
     }
 }
 
-.navbar-fixed-top.scrolled {
-    background-color: #fff !important;
-    transition: background-color 200ms linear;
-}
-
-
 /* Logo styling */
 img#logo {
     border-radius: 50%;
+    height: 25px;
 }
 
 
-/* Profile picture styling and animations */
-img#profile {
+/*
+*
+*  Styling for Home
+*
+*/
+
+/* Sets background image and pseudoelement for transparency */
+article#home {
+    background-image: url('../img/background.png');
+}
+
+article#home::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+
+/* Ensures actual content is not affected by the transparent pseudolayer */
+.content {
+    position: relative;
+    text-align: center;
+}
+
+/* Ensures that the main button group on Home is responsive */
+@media screen and (max-width: 991px) {
+    .button-width {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .button-width {
+        min-width: 700px;
+    }
+}
+
+/* Profile picture styling */
+img.profile {
     border-radius: 50%;
+    max-height: 300px;
+    max-width: 50%;
     cursor: pointer;
 }
 
-img#profile:hover {
-    opacity: 0.5;
-    border-radius: 10px;
-    transform: rotate(20deg);
+img.profile:hover {
+    opacity: 0.75;
+    border-radius: 50px;
+    transform: rotate(10deg);
 }
 
-img#profile:active {
-    padding: 5px;
+img.profile:active {
+    border-radius: 65px;
+    padding: 20px;
 }
+
+
+/* Non-mobile styles for articles */
+/* @media screen and (min-width: 768px) {
+    article#home {
+        height: 100vh;
+    }
+
+    article#about {
+        height: 100vh;
+    }
+} */
