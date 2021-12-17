@@ -242,3 +242,9 @@ footer {
     background: #212529;
     color: #9a9c9e;
 }
+
+.footer {
+    padding: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
