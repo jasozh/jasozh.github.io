@@ -45,10 +45,34 @@
       document.documentElement.style.setProperty("--active-color", "black");
     }
   }
+
+  // Checks if an element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+  }
+
+  // Activates animation for elements if they scroll into viewport
+  function scrollAnimate() {
+    const elementList = document.getElementsByClassName("not-animated")
+
+    for (const element of elementList) {
+      if (isInViewport(element)) {
+        element.classList.add("animated")
+        element.classList.remove("not-animated")
+      }
+    }
+  }
 </script>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100" onload="resizeNavbar()"
-  onresize="resizeNavbar()" onscroll="colorNavbar()">
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50" onload="resizeNavbar()"
+  onresize="resizeNavbar()" onscroll="colorNavbar(); scrollAnimate()">
   <!-- Header  -->
   <header>
     <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light bg-light opacity-75">
@@ -84,13 +108,15 @@
   <main>
     <!-- Home page -->
     <article id="home">
-      <div class="content d-flex flex-column min-vh-100 justify-content-center align-items-center">
+      <div class="home-content d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <div class="py-5"></div>
-        
+
+        <!-- Profile picture and title text -->
         <img class="profile" src="img/profile.png">
         <h1 class="title-text px-2 py-4 display-4"><b>My name is Jason Zheng</b></h1>
         <h3 class="subtitle-text px-2 py-4">And welcome to my website</h3>
 
+        <!-- Button group -->
         <div class="row button-group">
           <div class="col-lg py-1">
             <a href="#about" type="button" class="transparent btn btn-primary btn-block w-100">About me</a>
@@ -110,153 +136,99 @@
       </div>
     </article>
 
-    <article id="about">
-      <h4>About</h4>
-      <p>...</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+    <!-- About page -->
+    <article id="about" class="content">
+      <div class="container">
+        <!-- Title -->
+        <h1 class="display-4 pb-3 text-center text-md-start"><b>About Me</b></h1>
+
+        <div class="row flex-row-reverse justify-content-center align-items-center">
+          <!-- Picture -->
+          <div class="col-8 col-md-5">
+            <img class="not-animated profile-full img-fluid" src="img/profile-full.jpg">
+          </div>
+
+          <!-- Text body -->
+          <div class="col-md-7 pt-3">
+            <p>I am an undergraduate student at Cornell University majoring in Computer Science. I have been building
+              web applications for over five years, and I'm passionate about Linux, open-source software, and anything
+              related to technology or history.</p>
+
+            <p>In my free time, I enjoy running, playing the violin, and listening to podcasts. I also love browsing
+              random Wikipedia articles, playing obscure video games, and composing my own music.</p>
+
+            You can find me on the Internet here:
+            <ul>
+              <li>GitHub</li>
+              <li>LinkedIn</li>
+              <li>Handshake</li>
+              <li>YouTube</li>
+              <li>MuseScore</li>
+            </ul>
+
+            <p>You can contact me at <a href="mailto:jqz4@cornell.edu">jqz4@cornell.edu</a>.</p>
+
+            <p>My CV is available <a href="docs/Resume.pdf" target="_blank">here</a>.</p>
+          </div>
+        </div>
+      </div>
     </article>
-    <article id="contact">
+
+    <!-- Contact page -->
+    <article id="contact" class="content">
       <h4>Contact</h4>
-      <p>...</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      Hi
+      </div>
     </article>
-    <article id="projects">
-      <h4>Projects</h4>
-      <p>...</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+
+    <!-- Projects page -->
+    <article id="projects" class="content">
+      <div class="container">
+        <!-- Title -->
+        <h1 class="display-4 pb-3 text-center text-md-start"><b>Projects</b></h1>
+
+        <!-- JAdventure -->
+        <div class="row flex-row-reverse justify-content-center align-items-center">
+          <!-- Picture -->
+          <div class="col-md-5">
+            <img class="not-animated img-fluid" src="img/jadventure.png">
+          </div>
+
+          <!-- Text body -->
+          <div class="col-md-7 pt-3">
+            <h1 class="pb-3 text-center text-md-start">JAdventure</h1>
+            <p>JAdventure is a free, text adventure game with a prevalent fantasy theme. Players control their character
+              through simple text commands, and players can earn points by killing monsters and surviving hostile
+              encounters. The primary goal is to earn the maximum amount of points, and a secondary objective is to
+              defeat a cruel beast and restore peace to the lands. JAdventure is open source and available for download
+              on GitHub.</p>
+          </div>
+        </div>
+
+        <!-- Other projects -->
+        <div class="row flex-row-reverse justify-content-center align-items-center">
+        </div>
+      </div>
     </article>
-    <article id="hobbies">
+
+    <!-- Hobbies page -->
+    <article id="hobbies" class="content">
       <h4>Hobbies</h4>
-      <p>...</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      Hi
+      </div>
     </article>
-    <article id="random">
+
+    <!-- Random page -->
+    <article id="random" class="content">
       <h4>Random</h4>
-      <p>...</p>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      Hi
+      </div>
     </article>
   </main>
 
   <!-- Footer -->
   <footer>
-
+    <p>&copy; Jason Zheng. All rights reserved.</p>
   </footer>
 
   <!-- Bootstrap JS bundle -->
