@@ -12,67 +12,6 @@
   <title>Jason Zheng</title>
 </head>
 
-<script>
-  // Set scroll to 0 onload so colorNavbar() doesn't immediately trigger
-  var scroll = 0
-
-  // Changes navbar classes when navbar collapses
-  function resizeNavbar() {
-    const md = 768
-    const navList = document.getElementsByClassName("nav-link")
-
-    for (const nav of navList) {
-      if (window.innerWidth < md && nav.classList.contains("px-4")) {
-        nav.classList.remove("px-4")
-      } else if (window.innerWidth >= md && !nav.classList.contains("px-4")) {
-        nav.classList.add("px-4")
-      }
-    }
-  }
-
-  // Changes the navbar color depending on current screen position
-  function colorNavbar() {
-    const navbar = document.getElementById("navbar")
-    const home = document.getElementById("top-nav")
-
-    if (scroll == 0) {
-      scroll++
-    } else if (home.classList.contains("active") && navbar.classList.contains("navbar-dark")) {
-      navbar.classList.add("navbar-light", "bg-light", "opacity-75")
-      navbar.classList.remove("navbar-dark", "bg-dark")
-      document.documentElement.style.setProperty("--active-color", "lightgrey");
-    } else if (!home.classList.contains("active") && navbar.classList.contains("navbar-light")) {
-      navbar.classList.remove("navbar-light", "bg-light", "opacity-75")
-      navbar.classList.add("navbar-dark", "bg-dark")
-      document.documentElement.style.setProperty("--active-color", "black");
-    }
-  }
-
-  // Checks if an element is in the viewport
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    )
-  }
-
-  // Activates animation for elements if they scroll into viewport
-  function scrollAnimate() {
-    const elementList = document.getElementsByClassName("not-animated")
-
-    for (const element of elementList) {
-      if (isInViewport(element)) {
-        element.classList.add("animated")
-        element.classList.remove("not-animated")
-      }
-    }
-  }
-</script>
-
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50" onload="resizeNavbar()"
   onresize="resizeNavbar()" onscroll="colorNavbar(); scrollAnimate()">
   <!-- Header  -->
@@ -139,8 +78,8 @@
     </article>
 
     <!-- About page -->
-    <article id="about" class="content">
-      <div class="container">
+    <article id="about">
+      <div class="content container">
         <!-- Title -->
         <h1 class="display-4 pb-3 text-center text-md-start"><b>About Me</b></h1>
 
@@ -161,11 +100,9 @@
 
             You can find me on the Internet here:
             <ul>
-              <li><i class="fab fa-github"></i>&nbsp;<a href="https://github.com/jasozh/">GitHub</a></li>
-              <li><i class="fab fa-linkedin"></i>&nbsp;<a
-                  href="https://www.linkedin.com/in/jason-zheng-07a4a5223/">LinkedIn</a></li>
-              <li><i class="fab fa-youtube"></i>&nbsp;<a
-                  href="https://www.youtube.com/channel/UCpDZ0IkIDqkXK8ZTJfTx2sA">YouTube</a></li>
+              <li><a href="https://github.com/jasozh/">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/jason-zheng-07a4a5223/">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/channel/UCpDZ0IkIDqkXK8ZTJfTx2sA">YouTube</a></li>
               <li><a href="https://musescore.com/user/38882263">MuseScore</a></li>
             </ul>
 
@@ -178,28 +115,28 @@
     </article>
 
     <!-- Contact page -->
-    <article id="contact" class="content">
-      <div class="container">
+    <article id="contact">
+      <div class="content container">
         <h4>Contact</h4>
         Hi
       </div>
     </article>
 
     <!-- Projects page -->
-    <article id="projects" class="content">
-      <div class="container">
+    <article id="projects">
+      <div class="content container">
         <!-- Title -->
         <h1 class="display-4 pb-3 text-center text-md-start"><b>Projects</b></h1>
 
         <!-- JAdventure -->
         <div class="row flex-row-reverse justify-content-center align-items-center">
           <!-- Picture -->
-          <div class="col-md-5">
+          <div class="col-md-6">
             <img class="not-animated img-fluid" src="img/jadventure.png">
           </div>
 
           <!-- Text body -->
-          <div class="col-md-7 pt-3">
+          <div class="col-md-6 pt-3">
             <h1 class="pb-3 text-center text-md-start">JAdventure</h1>
             <p>JAdventure is a free, text adventure game with a prevalent fantasy theme. Players control their character
               through simple text commands, and players can earn points by killing monsters and surviving hostile
@@ -216,16 +153,16 @@
     </article>
 
     <!-- Hobbies page -->
-    <article id="hobbies" class="content">
-      <div class="container">
+    <article id="hobbies">
+      <div class="content container">
         <h4>Hobbies</h4>
         Hi
       </div>
     </article>
 
     <!-- Random page -->
-    <article id="random" class="content">
-      <div class="container">
+    <article id="random">
+      <div class="content container">
         <h4>Random</h4>
         Hi
       </div>
@@ -234,13 +171,12 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer">
-      <div class="container">&copy; 2021 Jason Zheng. All rights reserved.</div>
-    </div>
+    <div class="footer container">&copy; 2021 Jason Zheng. All rights reserved.</div>
   </footer>
 
-  <!-- Bootstrap JS bundle -->
+  <!-- Bootstrap JS bundle and script.js -->
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
