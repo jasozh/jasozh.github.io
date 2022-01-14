@@ -47,12 +47,19 @@ function isInViewport(element) {
 
 // Activates animation for elements if they scroll into viewport
 function scrollAnimate() {
-    const elementList = document.getElementsByClassName("not-animated")
-
+    var elementList = document.getElementsByClassName("right-not-animated")
     for (const element of elementList) {
         if (isInViewport(element)) {
-            element.classList.add("animated")
-            element.classList.remove("not-animated")
+            element.classList.add("right-animated")
+            element.classList.remove("right-not-animated")
+        }
+    }
+
+    elementList = document.getElementsByClassName("left-not-animated")
+    for (const element of elementList) {
+        if (isInViewport(element)) {
+            element.classList.add("left-animated")
+            element.classList.remove("left-not-animated")
         }
     }
 }

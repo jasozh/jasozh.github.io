@@ -84,7 +84,7 @@ article#home::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    background-color: rgba(255, 255, 255, 0.50);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 /* Ensures actual content is not affected by the transparent pseudolayer */
@@ -227,17 +227,17 @@ img.profile-full {
     border-radius: 10%;
 }
 
-/* Animation classes for animating images when scrolled into view */
-.not-animated {
+/* Animation classes for animating images when scrolled from right into view */
+.right-not-animated {
     visibility: hidden;
 }
 
-.animated {
-    animation-name: animated-animation;
+.right-animated {
+    animation-name: right-animated-animation;
     animation-duration: 1s;
 }
 
-@keyframes animated-animation {
+@keyframes right-animated-animation {
     0% {
         opacity: 0;
         transform: translate(500px, 0px);
@@ -271,6 +271,36 @@ img.profile-full {
         display: default;
     }
 }
+
+
+/*
+*
+*  Styling for Hobbies
+*
+*/
+
+/* Styling for hobby pictures */
+img.hobby-picture {
+    border-radius: 5%;
+}
+
+/* Animation classes for animating images when scrolled from left into view */
+.left-not-animated {
+    visibility: hidden;
+}
+
+.left-animated {
+    animation-name: left-animated-animation;
+    animation-duration: 1s;
+}
+
+@keyframes left-animated-animation {
+    0% {
+        opacity: 0;
+        transform: translate(-500px, 0px);
+    }
+}
+
 
 /*
 *

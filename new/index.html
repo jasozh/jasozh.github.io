@@ -16,10 +16,10 @@
 <template id="project-component">
   <div>
     <h1 class="mobile-text text-center text-md-start">{PROJECT TITLE}</h1>
-    <div class="pb-5 row flex-row-reverse justify-content-center align-items-center">
+    <div class="row flex-row-reverse justify-content-center align-items-center">
       <!-- Screenshot and modal -->
       <div class="col-md-6">
-        <img type="button" data-bs-toggle="modal" data-bs-target="#{PROJECT ID}" class="not-animated img-fluid"
+        <img type="button" data-bs-toggle="modal" data-bs-target="#{PROJECT ID}" class="right-not-animated img-fluid"
           src="{PROJECT SCREENSHOT}">
 
         <div class="modal fade" id="{PROJECT ID}" tabindex="-1" aria-hidden="true">
@@ -36,9 +36,47 @@
         <h1 class="desktop-text pb-3 text-center text-md-start">{PROJECT TITLE}</h1>
         <p>{PROJECT BODY}</p>
       </div>
+
+      <!-- Spacers -->
+      <div class="pb-5"></div>
+      <div class="pb-5"></div>
     </div>
   </div>
 </template>
+
+<!-- Hobby component -->
+<template id="hobby-component">
+  <div>
+    <h1 class="mobile-text text-center text-md-start">{HOBBY TITLE}</h1>
+    <div class="row flex-row justify-content-center align-items-center">
+      <!-- Screenshot and modal -->
+      <div class="col-md-6">
+        <img type="button" data-bs-toggle="modal" data-bs-target="#{HOBBY ID}"
+          class="left-not-animated hobby-picture shadow-sm img-thumbnail img-fluid" src="{HOBBY SCREENSHOT}">
+
+        <div class="modal fade" id="{HOBBY ID}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <img src="{HOBBY SCREENSHOT}">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text body -->
+      <div class="col-md-6 pt-3">
+        <h1 class="desktop-text pb-3 text-center text-md-start">{HOBBY TITLE}</h1>
+        <p>{HOBBY BODY}</p>
+      </div>
+
+      <!-- Spacers -->
+      <div class="pb-5"></div>
+      <div class="pb-5"></div>
+    </div>
+  </div>
+</template>
+
+<!-- Main body -->
 
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="50" onload="resizeNavbar(); loadComponents()"
   onresize="resizeNavbar()" onscroll="colorNavbar(); scrollAnimate()">
@@ -63,10 +101,10 @@
           <div class="navbar-nav">
             <a id="top-nav" class="nav-link px-4" href="#home">Home</a>
             <a class="nav-link px-4" href="#about">About</a>
-            <a class="nav-link px-4" href="#contact">Contact</a>
+            <a class="nav-link px-4" href="mailto:jqz4@cornell.edu?subject=Email from jasozh.github.io">Contact</a>
             <a class="nav-link px-4" href="#projects">Projects</a>
             <a class="nav-link px-4" href="#hobbies">Hobbies</a>
-            <a class="nav-link px-4" href="#random">Random</a>
+            <a class="nav-link px-4" href="https://en.wikipedia.org/wiki/Special:Random">Random</a>
           </div>
         </div>
       </div>
@@ -91,7 +129,8 @@
             <a href="#about" type="button" class="transparent btn btn-primary btn-block w-100">About me</a>
           </div>
           <div class="col-lg py-1">
-            <a href="#contact" type="button" class="transparent btn btn-primary btn-block w-100">Contact me</a>
+            <a href="mailto:jqz4@cornell.edu?subject=Email from jasozh.github.io" type="button"
+              class="transparent btn btn-primary btn-block w-100">Contact me</a>
           </div>
           <div class="col-lg py-1">
             <a href="#projects" type="button" class="transparent btn btn-primary btn-block w-100">See my projects</a>
@@ -109,22 +148,22 @@
     <article id="about">
       <div class="content container">
         <!-- Title -->
-        <h1 class="display-4 pb-3 text-center text-md-start"><b>About Me</b></h1>
+        <h1 class="display-4 pb-5 text-center text-md-start"><b>About Me</b></h1>
 
         <div class="row flex-row-reverse justify-content-center align-items-center">
           <!-- Picture -->
           <div class="col-8 col-md-5">
-            <img class="not-animated profile-full img-fluid" src="img/profile-full.jpg">
+            <img class="right-not-animated profile-full img-fluid" src="img/profile-full.jpg">
           </div>
 
           <!-- Text body -->
           <div class="col-md-7 pt-3">
             <p>I am an undergraduate student at Cornell University majoring in Computer Science. I have been building
-              web applications for over five years, and I'm passionate about Linux, open-source software, and anything
-              related to technology or history.</p>
+              web applications for over five years, and I'm passionate about Linux, open-source software, music, and
+              history.</p>
 
             <p>In my free time, I enjoy running, playing the violin, and listening to podcasts. I also love browsing
-              random Wikipedia articles, playing obscure video games, and composing my own music.</p>
+              random Wikipedia articles, playing obscure video games, composing music, and writing short stories.</p>
 
             You can find me on the Internet here:
             <ul>
@@ -134,7 +173,8 @@
               <li><a href="https://musescore.com/user/38882263">MuseScore</a></li>
             </ul>
 
-            <p>You can contact me at <a href="mailto:jqz4@cornell.edu">jqz4@cornell.edu</a>.</p>
+            <p>You can contact me at <a
+                href="mailto:jqz4@cornell.edu?subject=Email from jasozh.github.io">jqz4@cornell.edu</a>.</p>
 
             <p>My CV is available <a href="docs/Resume.pdf" target="_blank">here</a>.</p>
           </div>
@@ -142,19 +182,11 @@
       </div>
     </article>
 
-    <!-- Contact page -->
-    <article id="contact">
-      <div class="content container">
-        <h4>Contact</h4>
-        Hi
-      </div>
-    </article>
-
     <!-- Projects page -->
     <article id="projects">
       <div class="content container">
         <!-- Title -->
-        <h1 class="display-4 pb-3 text-center text-md-start"><b>Projects</b></h1>
+        <h1 class="display-4 pb-5 text-center text-md-start"><b>Projects</b></h1>
 
         <!-- PROJECT COMPONENTS LOADED HERE -->
       </div>
@@ -163,23 +195,24 @@
     <!-- Hobbies page -->
     <article id="hobbies">
       <div class="content container">
-        <h4>Hobbies</h4>
-        Hi
+        <h1 class="display-4 pb-5 text-center text-md-start"><b>Hobbies</b></h1>
+
+        <!-- HOBBY COMPONENTS LOADED HERE -->
       </div>
     </article>
 
-    <!-- Random page -->
-    <article id="random">
+    <!-- Additional pages -->
+    <!-- <article id="hobbies">
       <div class="content container">
-        <h4>Random</h4>
+        <h4>Hobbies</h4>
         Hi
       </div>
-    </article>
+    </article> -->
   </main>
 
   <!-- Footer -->
   <footer>
-    <div class="footer container">&copy; 2021 Jason Zheng. All rights reserved.</div>
+    <div class="footer container">&copy; 2022 Jason Zheng. All rights reserved.</div>
   </footer>
 
   <!-- JS -->
