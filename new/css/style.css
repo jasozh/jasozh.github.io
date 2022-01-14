@@ -17,17 +17,15 @@
 
 /* Prevent Bootstrap modals from repositioning site content */
 html {
-    padding-left: calc(100vw - 100%);
+    margin-right: calc(-1 * (100vw - 100%));
 }
 
 .navbar-collapse.justify-content-center {
-    padding-left: calc(100vw - 100%);
+    margin-right: calc(-1 * (100vw - 100%));
 }
 
 .modal-open {
-    /* width: 100% !important; */
     padding-right: 0 !important;
-    /* overflow-y: scroll !important; */
 }
 
 /* Hides x overflow to allow animations to slide in images offscreen */
