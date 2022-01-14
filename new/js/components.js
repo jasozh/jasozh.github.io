@@ -25,24 +25,12 @@ function projectComponent() {
 
     for (const project of projects) {
         var thisComponent = document.importNode(component, true)
-
-        // Set title
-        var mobileTitle = thisComponent.getElementsByTagName("h1")[0]
-        var desktopTitle = thisComponent.getElementsByTagName("h1")[1]
-        mobileTitle.textContent = desktopTitle.textContent = project.title
         
-        // Set screenshot/modal
-        var screenshot = thisComponent.getElementsByTagName("img")[0]
-        var modal = thisComponent.getElementsByClassName("modal")[0]
-        var modalScreenshot = thisComponent.getElementsByTagName("img")[1]
-        screenshot.src = project.screenshot
-        screenshot.setAttribute("data-bs-target", `#${project.id}`)
-        modal.id = `${project.id}`
-        modalScreenshot.src = project.screenshot
-        
-        // Set body
-        var body = thisComponent.getElementsByTagName("p")[0]
-        body.textContent = project.body
+        // Set variables
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT TITLE}", project.title)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT SCREENSHOT}", project.screenshot)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT ID}", project.id)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT BODY}", project.body)
 
         projectPage.appendChild(thisComponent)
     }
