@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="img/logo-circle.png">
   <title>Jason Zheng</title>
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -15,17 +15,26 @@
 <!-- Project component -->
 <template id="project-component">
   <div>
-    <h1 class="mobile-text text-center text-md-start">PROJECT NAME</h1>
+    <h1 class="mobile-text text-center text-md-start">{PROJECT NAME}</h1>
     <div class="pb-5 row flex-row-reverse justify-content-center align-items-center">
-      <!-- Picture -->
+      <!-- Screenshot and modal -->
       <div class="col-md-6">
-        <img class="not-animated img-fluid" src="PROJECT SCREENSHOT">
+        <img type="button" data-bs-toggle="modal" data-bs-target="#{PROJECT ID}" class="not-animated img-fluid"
+          src="{PROJECT SCREENSHOT}">
+
+        <div class="modal fade" id="{PROJECT ID}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <img src="{PROJECT SCREENSHOT}">
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Text body -->
       <div class="col-md-6 pt-3">
-        <h1 class="desktop-text pb-3 text-center text-md-start">PROJECT NAME</h1>
-        <p>PROJECT TEXT BODY</p>
+        <h1 class="desktop-text pb-3 text-center text-md-start">{PROJECT NAME}</h1>
+        <p>{PROJECT BODY}</p>
       </div>
     </div>
   </div>
@@ -146,7 +155,7 @@
       <div class="content container">
         <!-- Title -->
         <h1 class="display-4 pb-3 text-center text-md-start"><b>Projects</b></h1>
-        
+
         <!-- PROJECT COMPONENTS LOADED HERE -->
       </div>
     </article>
