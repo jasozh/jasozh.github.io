@@ -25,7 +25,7 @@ var hobbies = [
         id: "writing",
         title: "Writing",
         screenshot: "img/hobbies/writing.png",
-        body: "Although I no longer write very frequently, I still enjoy writing poems and short stories whenever I have a burst of inspiration. Some of my favorite book genres are fantasy, science fiction, and historical fiction, and my writing tends to fall into those categories as well. Although my writing still leaves much to be desired, you can find a list of my stories on my <a href='https://www.wattpad.com/user/jasozh'>Wattpad profile</a>."
+        body: "Although I no longer write very frequently, I still enjoy writing poems and short stories whenever I have a burst of inspiration. Some of my favorite book genres are fantasy, science fiction, and historical fiction, and my writing tends to fall into those categories as well. Although my writing still leaves much to be desired, I hope to eventually finish a few of my short stories."
     }
 ]
 
