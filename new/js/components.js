@@ -1,9 +1,4 @@
-function loadComponents() {
-    projectComponent()
-    hobbyComponent()
-}
-
-// Project component
+// Data
 var projects = [
     {
         id: "website",
@@ -19,25 +14,6 @@ var projects = [
     }
 ]
 
-function projectComponent() {
-    var projectPage = document.getElementById("projects").getElementsByClassName("content")[0]
-    var template = document.getElementById("project-component")
-    var component = template.content.querySelector("div")
-
-    for (const project of projects) {
-        var thisComponent = document.importNode(component, true)
-        
-        // Set variables
-        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT TITLE}", project.title)
-        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT SCREENSHOT}", project.screenshot)
-        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT ID}", project.id)
-        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT BODY}", project.body)
-
-        projectPage.appendChild(thisComponent)
-    }
-}
-
-// Hobby component
 var hobbies = [
     {
         id: "composing",
@@ -53,6 +29,32 @@ var hobbies = [
     }
 ]
 
+// Global load function
+function loadComponents() {
+    projectComponent()
+    hobbyComponent()
+}
+
+// Project component
+function projectComponent() {
+    var projectPage = document.getElementById("projects").getElementsByClassName("content")[0]
+    var template = document.getElementById("project-component")
+    var component = template.content.querySelector("div")
+
+    for (const project of projects) {
+        var thisComponent = document.importNode(component, true)
+
+        // Set variables
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT TITLE}", project.title)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT SCREENSHOT}", project.screenshot)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT ID}", project.id)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT BODY}", project.body)
+
+        projectPage.appendChild(thisComponent)
+    }
+}
+
+// Hobby component
 function hobbyComponent() {
     var hobbyPage = document.getElementById("hobbies").getElementsByClassName("content")[0]
     var template = document.getElementById("hobby-component")
@@ -60,7 +62,7 @@ function hobbyComponent() {
 
     for (const hobby of hobbies) {
         var thisComponent = document.importNode(component, true)
-        
+
         // Set variables
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{HOBBY TITLE}", hobby.title)
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{HOBBY SCREENSHOT}", hobby.screenshot)
