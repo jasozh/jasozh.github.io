@@ -40,7 +40,7 @@ article.alternate {
 
 /* Animation classes for animating dividers when scrolled into view */
 .divider-not-animated {
-    visibility: hidden;
+    background: none;
 }
 
 .divider-animated {
