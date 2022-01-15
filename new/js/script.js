@@ -62,4 +62,12 @@ function scrollAnimate() {
             element.classList.remove("left-not-animated")
         }
     }
+
+    elementList = document.getElementsByClassName("divider-not-animated")
+    for (const element of elementList) {
+        if (isInViewport(element)) {
+            element.classList.add("divider-animated")
+            element.classList.remove("divider-not-animated")
+        }
+    }
 }
