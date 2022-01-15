@@ -4,13 +4,13 @@ var projects = [
         id: "website",
         title: "jasozh.github.io",
         screenshot: "img/projects/website.png",
-        body: "jasozh.github.io was developed using HTML, CSS, and JavaScript. The website makes use of the Bootstrap 5 framework and was designed from the ground up to be modern, performant, and responsive. The website logo and background were designed using GIMP, and Visual Studio Code was used to code the website itself. The source code for jasozh.github.io is available on GitHub."
+        body: "jasozh.github.io was developed using HTML, CSS, and JavaScript. The website makes use of the Bootstrap 5 framework and was designed from the ground up to be modern, performant, and responsive. The website logo and background were designed using GIMP, and Visual Studio Code was used to code the website itself. The source code for jasozh.github.io is available on <a href='https://github.com/jasozh/jasozh.github.io'>GitHub</a>."
     },
     {
         id: "jadventure",
         title: "JAdventure",
         screenshot: "img/projects/jadventure.png",
-        body: "JAdventure is a free, text adventure game with a prevalent fantasy theme. Players control their character through simple text commands, and players can earn points by killing monsters and surviving hostile encounters. The primary goal is to earn the maximum amount of points, and a secondary objective is to defeat a cruel beast and restore peace to the lands. JAdventure is open source and available for download on GitHub."
+        body: "JAdventure is a free, text adventure game with a prevalent fantasy theme. Players control their character through simple text commands, and players can earn points by killing monsters and surviving hostile encounters. The primary goal is to earn the maximum amount of points, and a secondary objective is to defeat a cruel beast and restore peace to the lands. JAdventure is open source and available for download on <a href='https://github.com/jasozh/jadventure'>GitHub</a>."
     }
 ]
 

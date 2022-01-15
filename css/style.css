@@ -1,155 +1,365 @@
+/*
+*
+*  Global styling
+*
+*/
+
+/* Define CSS variables */
+:root {
+    /* Default lightgrey, changes to black when navbar color is inverted */
+    --active-color: lightgrey;
+}
+
 /* Add CSS animations to all page elements */
 * {
-	transition: 0.2s;
+    transition: 0.2s;
 }
 
+/* Prevent Bootstrap modals from repositioning site content */
 html {
-	background: #36454f;
+    margin-right: calc(-1 * (100vw - 100%));
 }
 
+.navbar-collapse.justify-content-center {
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
+.modal-open {
+    padding-right: 0 !important;
+}
+
+/* Hides x overflow to allow animations to slide in images offscreen */
 body {
-	font-family: "Verdana", sans-serif;
-	margin: 0 auto 1em auto;
-	max-width: 65em;
-	padding: 1em 4em;
-	font-size: 16px;
+    overflow-x: hidden;
 }
 
-/* Leave space at the top for the nav bar */
-#content {
-	padding-top: 60px;
+/* Alternate article background */
+article.alternate {
+    background: #fafafa;
 }
 
-/* Image styling */
-.image {
-	max-width: 100%;
-	height: 30em;
-	border-radius: 1em;
-	display: block;
-	margin: auto;
-	cursor: pointer;
+/* Animation classes for animating dividers when scrolled into view */
+.divider-not-animated {
+    background: none;
 }
 
-.image:hover {
-	filter: saturate(200%);
-	border-radius: 4em;
-	/* border: 10px black; */
+.divider-animated {
+    animation-name: divider-animated-animation;
+    animation-duration: 1s;
+    background-image: linear-gradient(black, black);
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
 }
 
-.image:active {
-	padding: 20%;
+@keyframes divider-animated-animation {
+    0% {
+        background-size: 0 3px;
+        background-position: 0 100%;
+    }
 }
 
-/* Paragraph styling */
-h1:hover, p:hover {
-	color: gray;
+/* Alternative strategy to animate dividers; keep commented*/
+/* .divider-not-animated {
+    visibility: hidden;
 }
 
-h1:active, p:active {
-	filter: blur(2px);
+.divider-animated {
+    width: 20%;
+    height: 3px;
+    background: black;
+    animation-name: divider-animated-animation;
+    animation-duration: 1s;
 }
 
-/* Footer styling */
+@keyframes divider-animated-animation {
+    0% {
+        width: 0;
+    }
+} */
+
+
+/*
+*
+*  Navbar styling
+*
+*/
+
+/* Show highlighted active state only on desktop */
+@media screen and (max-width: 767px) {
+    a.active {
+        text-decoration: underline;
+        transition: 0s;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    a.active {
+        background-color: var(--active-color);
+        border-radius: 5px;
+    }
+
+    a.nav-link:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Logo styling */
+img#logo {
+    border-radius: 50%;
+    height: 25px;
+}
+
+
+/*
+*
+*  Styling for Home
+*
+*/
+
+/* Sets background image and pseudoelement for transparency */
+article#home {
+    background-image: url('../img/background.png');
+}
+
+article#home::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Ensures actual content is not affected by the transparent pseudolayer */
+.home-content {
+    position: relative;
+    text-align: center;
+}
+
+/* Ensures that the main button group on Home is responsive */
+@media screen and (max-width: 991px) {
+    .button-group {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .button-group {
+        min-width: 700px;
+    }
+}
+
+/* Make buttons slightly transparent until hover */
+.transparent {
+    opacity: 0.75;
+}
+
+.transparent:hover {
+    opacity: 1;
+}
+
+/* Profile picture styling and animations */
+img.profile {
+    border-radius: 50%;
+    max-height: 300px;
+    max-width: 50%;
+    cursor: pointer;
+    animation-name: profile-animation;
+    animation-duration: 1s;
+}
+
+img.profile:hover {
+    opacity: 0.75;
+    border-radius: 50px;
+    transform: rotate(10deg);
+}
+
+img.profile:active {
+    transform: scale(0.8, 0.8) rotate(10deg);
+}
+
+/* Title and subtitle text animations */
+@keyframes profile-animation {
+    0% {
+        transform: scale(0.7, 0.7);
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.title-text {
+    animation-name: title-animation;
+    animation-duration: 1s;
+}
+
+@keyframes title-animation {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.subtitle-text {
+    animation-name: subtitle-animation;
+    animation-duration: 1.25s;
+}
+
+@keyframes subtitle-animation {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Button group animations */
+.button-group {
+    animation-name: button-animation;
+    animation-duration: 2s;
+}
+
+@keyframes button-animation {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*
+*
+*  Styling for About
+*
+*/
+
+/* Styling for all page contents */
+.content {
+    padding: 100px 20px 20px 20px;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Styling for profile picture */
+img.profile-full {
+    border-radius: 10%;
+}
+
+/* Animation classes for animating images when scrolled from right into view */
+.right-not-animated {
+    visibility: hidden;
+}
+
+.right-animated {
+    animation-name: right-animated-animation;
+    animation-duration: 1s;
+}
+
+@keyframes right-animated-animation {
+    0% {
+        opacity: 0;
+        transform: translate(500px, 0px);
+    }
+}
+
+
+/*
+*
+*  Styling for Projects
+*
+*/
+
+/* Hide/show text when on mobile/desktop */
+@media screen and (max-width: 767px) {
+    .mobile-text {
+        display: default;
+    }
+
+    .desktop-text {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-text {
+        display: none;
+    }
+
+    .desktop-text {
+        display: default;
+    }
+}
+
+
+/*
+*
+*  Styling for Hobbies
+*
+*/
+
+/* Styling for hobby pictures */
+img.hobby-picture {
+    border-radius: 5%;
+}
+
+/* Animation classes for animating images when scrolled from left into view */
+.left-not-animated {
+    visibility: hidden;
+}
+
+.left-animated {
+    animation-name: left-animated-animation;
+    animation-duration: 1s;
+}
+
+@keyframes left-animated-animation {
+    0% {
+        opacity: 0;
+        transform: translate(-500px, 0px);
+    }
+}
+
+
+/*
+*
+*  Footer styling
+*
+*/
+
 footer {
-	font-size: 0.8em;
+    background: #212529;
+    color: #9a9c9e;
 }
 
-/* Responsive design */
-
-/* For phone screens */
-@media screen and (max-width: 40em) {
-	/* Hiding nav bar by default, making everything full width */
-	.nav-border {
-		width: 100%;
-	}
-
-	li.nav {
-		width: 100%;
-		display: none;
-	}
-}
-
-/* For tablet screens */
-@media screen and (max-width: 65em) {
-	/* Reducing side padding */
-	body {
-		margin: 0 auto 0 auto;
-		padding: 1em 2em;
-	}
-
-	/* Making images responsive to screen width */
-	.image {
-		height: 45vw;
-	}
-}
-
-/* For non-phone screens */
-@media screen and (min-width: 40em) {
-	/* Hiding the nav bar menu */
-	li.nav-menu {
-		display: none;
-	}
-
-	/* Showing the nav bar content */
-	li.nav {
-		display: block !important;
-	}
-}
-
-/* Main logo transitions */
-#logo {
-	border-radius: 50%;
-	cursor: pointer;
-}
-
-#logo:hover {
-	opacity: 0.5;
-	border-radius: 10px;
-	transform: rotate(20deg);
-}
-
-#logo:active {
-	padding: 5px;
-}
-
-/* Nav bar */
-.nav-border {
-	margin: auto;
-}
-
-ul.nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: #333;
-	backdrop-filter: blur(2px);
-	opacity: 0.95;
-	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
-}
-
-li.nav, li#nav-logo, li.nav-menu {
-	float: left;
-}
-
-li#nav-logo {
-	padding: 10px;
-}
-
-li.nav a, li.nav-menu a {
-	color: white;
-	padding: 17px 20px 17px;
-	text-decoration: none;
-	display: block;
-}
-
-/* Change the link color to #111 (black) on hover */
-li.nav a:hover {
-	background-color: #111;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-li.nav a:active {
-	background-color: #000;
+.footer {
+    padding: 25px 20px 25px 20px;
+    max-width: 1100px;
+    margin: auto;
 }

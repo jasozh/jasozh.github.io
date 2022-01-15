@@ -1,0 +1,155 @@
+/* Add CSS animations to all page elements */
+* {
+	transition: 0.2s;
+}
+
+html {
+	background: #36454f;
+}
+
+body {
+	font-family: "Verdana", sans-serif;
+	margin: 0 auto 1em auto;
+	max-width: 65em;
+	padding: 1em 4em;
+	font-size: 16px;
+}
+
+/* Leave space at the top for the nav bar */
+#content {
+	padding-top: 60px;
+}
+
+/* Image styling */
+.image {
+	max-width: 100%;
+	height: 30em;
+	border-radius: 1em;
+	display: block;
+	margin: auto;
+	cursor: pointer;
+}
+
+.image:hover {
+	filter: saturate(200%);
+	border-radius: 4em;
+	/* border: 10px black; */
+}
+
+.image:active {
+	padding: 20%;
+}
+
+/* Paragraph styling */
+h1:hover, p:hover {
+	color: gray;
+}
+
+h1:active, p:active {
+	filter: blur(2px);
+}
+
+/* Footer styling */
+footer {
+	font-size: 0.8em;
+}
+
+/* Responsive design */
+
+/* For phone screens */
+@media screen and (max-width: 40em) {
+	/* Hiding nav bar by default, making everything full width */
+	.nav-border {
+		width: 100%;
+	}
+
+	li.nav {
+		width: 100%;
+		display: none;
+	}
+}
+
+/* For tablet screens */
+@media screen and (max-width: 65em) {
+	/* Reducing side padding */
+	body {
+		margin: 0 auto 0 auto;
+		padding: 1em 2em;
+	}
+
+	/* Making images responsive to screen width */
+	.image {
+		height: 45vw;
+	}
+}
+
+/* For non-phone screens */
+@media screen and (min-width: 40em) {
+	/* Hiding the nav bar menu */
+	li.nav-menu {
+		display: none;
+	}
+
+	/* Showing the nav bar content */
+	li.nav {
+		display: block !important;
+	}
+}
+
+/* Main logo transitions */
+#logo {
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+#logo:hover {
+	opacity: 0.5;
+	border-radius: 10px;
+	transform: rotate(20deg);
+}
+
+#logo:active {
+	padding: 5px;
+}
+
+/* Nav bar */
+.nav-border {
+	margin: auto;
+}
+
+ul.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #333;
+	backdrop-filter: blur(2px);
+	opacity: 0.95;
+	z-index: 10; /* IMPORTANT! Keeps the navbar stacked on top of other elements */
+}
+
+li.nav, li#nav-logo, li.nav-menu {
+	float: left;
+}
+
+li#nav-logo {
+	padding: 10px;
+}
+
+li.nav a, li.nav-menu a {
+	color: white;
+	padding: 17px 20px 17px;
+	text-decoration: none;
+	display: block;
+}
+
+/* Change the link color to #111 (black) on hover */
+li.nav a:hover {
+	background-color: #111;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+li.nav a:active {
+	background-color: #000;
+}
