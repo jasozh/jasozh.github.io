@@ -174,7 +174,6 @@ img.profile {
 img.profile:hover {
     opacity: 0.75;
     border-radius: 50px;
-    transform: rotate(10deg);
 }
 
 img.profile:active {
