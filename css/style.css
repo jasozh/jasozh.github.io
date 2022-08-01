@@ -171,11 +171,6 @@ img.profile {
     animation-duration: 1s;
 }
 
-img.profile:hover {
-    opacity: 0.75;
-    border-radius: 50px;
-}
-
 img.profile:active {
     transform: scale(0.8, 0.8) rotate(10deg);
 }
