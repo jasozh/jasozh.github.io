@@ -16,7 +16,10 @@
 
 <template id="project-component">
   <div>
-    <h1 class="mobile-text text-center text-md-start">{PROJECT TITLE}</h1>
+    <div class="project-header mobile-text" style="justify-content: center;">
+      <img class="project-logo" src="{PROJECT LOGO}">
+      <h1 class="project-heading">{PROJECT TITLE}</h1>
+    </div>
     <div class="row flex-row-reverse justify-content-center align-items-center">
       <!-- Screenshot and modal -->
       <div class="col-md-6">
@@ -34,7 +37,10 @@
 
       <!-- Text body -->
       <div class="col-md-6 pt-3">
-        <h1 class="desktop-text pb-3 text-center text-md-start">{PROJECT TITLE}</h1>
+        <div class="project-header desktop-text pb-3">
+          <img class="project-logo" src="{PROJECT LOGO}">
+          <h1 class="project-heading">{PROJECT TITLE}</h1>
+        </div>
         <p>{PROJECT BODY}</p>
       </div>
 
