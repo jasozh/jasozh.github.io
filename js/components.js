@@ -1,14 +1,23 @@
 // Data
 var projects = [
     {
+        id: "canari",
+        title: "Canari",
+        logo: "img/projects/canari-logo.png",
+        screenshot: "img/projects/canari.png",
+        body: "Canari is a GTK4/libadwaita app for tracking the enrollment status of Cornell classes. The app was designed in accordance with the GNOME Human Interface Guidelines and offers a modern, easy-to-use interface. Requests are automatically sent to Class Roster every 10 minutes, and updates are communicated through desktop notifications. Canari was written using Python 3, GTK4+, and libadwaita; the icon was designed and developed using Figma and Inkscape. Canari is available for install as a Flatpak, and the source code is available on <a href='https://github.com/jasozh/canari'>GitHub</a>."
+    },
+    {
         id: "website",
         title: "jasozh.github.io",
+        logo: "img/projects/website-logo.png",
         screenshot: "img/projects/website.png",
         body: "jasozh.github.io was developed using HTML, CSS, and JavaScript. The website makes use of the Bootstrap 5 framework and was designed from the ground up to be modern, performant, and responsive. The website logo and background were designed using GIMP, and Visual Studio Code was used to code the website itself. The source code for jasozh.github.io is available on <a href='https://github.com/jasozh/jasozh.github.io'>GitHub</a>."
     },
     {
         id: "jadventure",
         title: "JAdventure",
+        logo: "img/projects/jadventure-logo.png",
         screenshot: "img/projects/jadventure.png",
         body: "JAdventure is a free, text adventure game with a prevalent fantasy theme. Players control their character through simple text commands, and players can earn points by killing monsters and surviving hostile encounters. The primary goal is to earn the maximum amount of points, and a secondary objective is to defeat a cruel beast and restore peace to the lands. JAdventure is open source and available for download on <a href='https://github.com/jasozh/jadventure'>GitHub</a>."
     }
@@ -46,6 +55,7 @@ function projectComponent() {
 
         // Set variables
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT TITLE}", project.title)
+        thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT LOGO}", project.logo)
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT SCREENSHOT}", project.screenshot)
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT ID}", project.id)
         thisComponent.innerHTML = thisComponent.innerHTML.replaceAll("{PROJECT BODY}", project.body)
