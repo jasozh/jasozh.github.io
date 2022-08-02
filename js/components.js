@@ -5,7 +5,7 @@ var projects = [
         title: "Canari",
         logo: "img/projects/canari-logo.png",
         screenshot: "img/projects/canari.png",
-        body: "Canari is a GTK4/libadwaita app for tracking the enrollment status of Cornell classes. The app was designed in accordance with the GNOME Human Interface Guidelines and offers a modern, easy-to-use interface. Requests are automatically sent to Class Roster every 10 minutes, and updates are communicated through desktop notifications. Canari was written using Python 3, GTK4+, and libadwaita; the icon was designed and developed using Figma and Inkscape. Canari is available for install as a Flatpak, and the source code is available on <a href='https://github.com/jasozh/canari'>GitHub</a>."
+        body: "Canari is a GTK4/libadwaita app that tracks the enrollment status of Cornell classes. The app was designed in accordance with the GNOME Human Interface Guidelines and offers a modern, easy-to-use interface. Requests are sent to Class Roster every 10 minutes, and updates are communicated through desktop notifications. Canari was written using Python 3, GTK4+, and libadwaita; the icon was designed using Figma and Inkscape. Canari is available as a Flatpak, and the source code is available on <a href='https://github.com/jasozh/canari'>GitHub</a>."
     },
     {
         id: "website",
