@@ -1,12 +1,9 @@
 {
   "trailingComma": "es5",
   "plugins": [
-    "prettier-plugin-classnames",
     "prettier-plugin-jsdoc",
     "prettier-plugin-svelte",
-    "prettier-plugin-tailwindcss",
-    "prettier-plugin-merge"
+    "prettier-plugin-tailwindcss"
   ],
-  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
-  "endingPosition": "absolute-with-indent"
+  "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }

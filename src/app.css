@@ -1,5 +1,6 @@
-/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   a {
@@ -15,7 +16,3 @@
     @apply tw-text-3xl sm:tw-text-4xl;
   }
 }
-
-@tailwind components;
-
-@tailwind utilities;
