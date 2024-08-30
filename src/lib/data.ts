@@ -6,13 +6,13 @@ import { base } from "$app/paths";
  * Corners extension for all apps
  */
 export const projects = [
-  // {
-  //   id: "volunteer-platform",
-  //   title: "LFBI Volunteer Platform",
-  //   logo: `${base}/img/projects/earth-legislator-logo.png`,
-  //   screenshot: `${base}/img/projects/earth-legislator.png`,
-  //   body: "Product Manager / Technical Lead &#8226; Hack4Impact Cornell<br><br>An end-to-end volunteer management solution built for the Lagos Food Bank Initiative and designed to handle a capacity of 20,000 volunteers. Built with the latest technologies, including Next.js, Prisma ORM, Firebase, and SendGrid. See the <a href='https://earth-law-center.herokuapp.com/'>website</a> and view the source on <a href='https://github.com/cornellh4i/earth-law-center/'>GitHub</a>.",
-  // },
+  {
+    id: "lagos-volunteers",
+    title: "LFBI Volunteer Platform",
+    logo: `${base}/img/projects/lagos-volunteers-logo.png`,
+    screenshot: `${base}/img/projects/lagos-volunteers.png`,
+    body: "Product Manager, Technical Lead &#8226; Hack4Impact Cornell<br><br>An end-to-end volunteer management solution built for the Lagos Food Bank Initiative and designed to handle a capacity of 20,000 volunteers. Built with the latest technologies, including Next.js, Prisma ORM, Firebase, and SendGrid. View the source on <a href='https://github.com/cornellh4i/lagos-volunteers'>GitHub</a>.",
+  },
   // {
   //   id: "sketchy",
   //   title: "Sketchy",
@@ -32,7 +32,7 @@ export const projects = [
     title: "Earth Legislator",
     logo: `${base}/img/projects/earth-legislator-logo.png`,
     screenshot: `${base}/img/projects/earth-legislator.png`,
-    body: "Developer &#8226; Hack4Impact Cornell<br><br>Create eco-centric template laws for your local municipality. Developed for the Earth Law Center, written in React and Node.js. See the <a href='https://earth-law-center.herokuapp.com/'>website</a> and view the source on <a href='https://github.com/cornellh4i/earth-law-center/'>GitHub</a>.",
+    body: "Developer &#8226; Hack4Impact Cornell<br><br>Create eco-centric template laws for your local municipality. Developed for the Earth Law Center, written in React and Node.js.",
   },
   {
     id: "canari",
